@@ -3,18 +3,11 @@ import '../App.css';
 
 const FlashCard = (props) => {
   return (
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <p>{props.question}</p>
-          {/* <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;" /> */}
-        </div>
-        <div class="flip-card-back">
-          <p>{props.answer}</p>
-        </div>
-      </div>
+    <div className='flashcard' onClick={props.onClick}>
+        <p>{props.card[props.isFlipped]}</p>
+        {props.isFlipped === 'front' ? <img className='picture' src = {props.img} /> : ''}
     </div>
-  )
+  );
 }
 
 export default FlashCard;
