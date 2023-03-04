@@ -2,7 +2,7 @@
 
 Submitted by: Johnny A. Cortez
 
-This app generates a random flashcard over climate change facts to raise more awarness towards climate change
+This app generates a random flashcard over climate change facts to raise more awareness towards climate change
 
 Time spent: 6 hours spent in total
 
