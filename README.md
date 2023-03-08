@@ -26,7 +26,7 @@ Cards contain images in addition to or in place of text - completed
 
 Here's a walkthrough of implemented features:
 
-<img src='Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='Animation_ProjectTwo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ScreenToGif
 
