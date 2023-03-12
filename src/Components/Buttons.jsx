@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 
-const NextButton = (props) => {
+export const NextButton = (props) => {
     return(
         <button onClick={props.onClick}>
             Next
@@ -9,4 +9,18 @@ const NextButton = (props) => {
     )
 }
 
-export default NextButton;
+export const BackButton = (props) => {
+    return(
+        <button onClick={props.onClick}>
+            Back
+        </button>
+    )
+}
+
+export const RandomButton = (props) => {
+    return(
+        <button onClick={props.onClick}>
+            Shuffle
+        </button>
+    )
+}

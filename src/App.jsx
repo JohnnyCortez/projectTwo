@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import './App.css';
 import FlashCard from './Components/FlashCards';
-import NextButton from './Components/Buttons';
+import { NextButton, BackButton, RandomButton }  from './Components/Buttons';
+
+import MainForm from './Components/Form';
 
 const App = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);  
+  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [disabled, setDisabled] = useState(false); 
   const [isFlipped, setIsFlipped] = useState('back');
 
   const cards = [
@@ -20,10 +23,24 @@ const App = () => {
     {front: '_______ of the most precious habitats are under threat.', back: 'One third', img: 'https://www.edf.org/sites/default/files/facebook_thumb/istock_boy_on_dry_lake_bed_157418252_1200_x_630.jpg'},
   ]
 
-  function handleNextClick() {
+  function handleRandomClick() {
     let randomIndex = Math.floor(Math.random() * 10);
     setCurrentIndex(randomIndex);
     setIsFlipped('front');
+  }
+
+  function handleNextClick() {
+    if (currentIndex < cards.length - 1){
+      setCurrentIndex(currentIndex + 1);
+      setIsFlipped('front');
+    }
+  }
+
+  function handleBackClick() {
+    if (currentIndex > 0){
+      setCurrentIndex(currentIndex - 1);
+      setIsFlipped('front');
+    }
   }
 
   function flipCard() {
@@ -37,9 +54,12 @@ const App = () => {
       <h2>flashcards to keep aware of climate change issues</h2>
       <h3>Number of cards: 10</h3>
       <FlashCard card={cards[currentIndex]} isFlipped={isFlipped} onClick={flipCard} img={cards[currentIndex].img}/>      
-      <NextButton onClick={handleNextClick}/>
+      <MainForm />      
+      <RandomButton onClick={handleRandomClick}/>
+      <BackButton onClick={handleBackClick} disabled={currentIndex === 0}/>
+      <NextButton onClick={handleNextClick} disabled={currentIndex === cards.length - 1}/>
     </div>
   )
 }
 
-export default App
+export default App;
