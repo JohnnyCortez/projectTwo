@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import FlashCard from './Components/FlashCards';
 import { NextButton, BackButton, RandomButton }  from './Components/Buttons';
