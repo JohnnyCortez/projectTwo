@@ -7,8 +7,8 @@ import MainForm from './Components/Form';
 
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0); 
-  const [disabled, setDisabled] = useState(false); 
   const [isFlipped, setIsFlipped] = useState('back');
+  const [reset, setReset] = useState(0);
 
   const cards = [
     {front: 'Greenhouse gases are at a __________ high', back: '4.5 million-year', img : 'https://cdn.mos.cms.futurecdn.net/h3aSZJE8F3DseTRsqKJ8vh.jpg'},
@@ -27,12 +27,14 @@ const App = () => {
     let randomIndex = Math.floor(Math.random() * 10);
     setCurrentIndex(randomIndex);
     setIsFlipped('front');
+    setReset(reset + 1);
   }
 
   function handleNextClick() {
     if (currentIndex < cards.length - 1){
       setCurrentIndex(currentIndex + 1);
       setIsFlipped('front');
+      setReset(reset + 1);
     }
   }
 
@@ -40,6 +42,7 @@ const App = () => {
     if (currentIndex > 0){
       setCurrentIndex(currentIndex - 1);
       setIsFlipped('front');
+      setReset(reset + 1);
     }
   }
 
@@ -54,8 +57,8 @@ const App = () => {
       <h2>flashcards to keep aware of climate change issues</h2>
       <h3>Number of cards: 10</h3>
       <FlashCard card={cards[currentIndex]} isFlipped={isFlipped} onClick={flipCard} img={cards[currentIndex].img}/>      
-      <MainForm />      
-      <RandomButton onClick={handleRandomClick}/>
+      <MainForm card={cards[currentIndex]} isFlipped={isFlipped} key={reset}/>      
+      <RandomButton onClick={handleRandomClick} card={cards[currentIndex]}/>
       <BackButton onClick={handleBackClick} disabled={currentIndex === 0}/>
       <NextButton onClick={handleNextClick} disabled={currentIndex === cards.length - 1}/>
     </div>
