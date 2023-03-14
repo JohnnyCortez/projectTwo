@@ -2,25 +2,23 @@
 
 Submitted by: Johnny A. Cortez
 
-This app generates a random flashcard over climate change facts to raise more awareness towards climate change
+This app generates a random flashcard over climate change facts to raise more awareness towards climate change, allowing user input to quiz oneself.
 
-Time spent: 6 hours spent in total
+Time spent: 6 hours spent in total of basic features, then 3 to 4 hours for additional features
 
 ## Required Features
 
-The title of the card set and some information about it, such as a short description and the total number of cards are displayed - completed
+User Input 
+The user can enter their guess in a box before seeing the flipside of the card - completed
+Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect - completed
 
-A single card at a time is displayed, only showing one of the components of the information pair - completed
-
-Create a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine) - completed
-
-Clicking on the card shows the corresponding component of the information pair - completed
-
-Clicking the next button displays a random new card - completed
+Moving Multiple Ways in the Card List
+A back button displayed on the card can be used to return to the previous card in a set sequence - completed
+A next button displayed on the card can be used to navigate to the next card in a set sequence - completed
 
 ## Stretch Features
 
-Cards contain images in addition to or in place of text - completed
+A shuffle button can be used to randomize the order of the cards - completed
 
 ## Video Walkthrough
 
